@@ -1,0 +1,29 @@
+{
+  "checks": {
+    "exactly300": true,
+    "uniqueIds": true,
+    "uniqueHosts": true,
+    "validHttpsUrls": true,
+    "completeFields": true,
+    "knownCategories": true,
+    "distributionMatches": true,
+    "defaultStatusUnchecked": true
+  },
+  "counts": {
+    "ai": 40,
+    "social": 20,
+    "games": 25,
+    "development": 35,
+    "education": 25,
+    "design": 30,
+    "productivity": 25,
+    "entertainment": 20,
+    "research": 20,
+    "utilities": 25,
+    "business": 15,
+    "technology": 20
+  },
+  "total": 300,
+  "uniqueIds": 300,
+  "uniqueHosts": 300
+}

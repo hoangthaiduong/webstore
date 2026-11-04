@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f5f6f8" />
+  <meta name="description" content="WEBSTORE — Explore. Discover. Connect. A curated directory of useful websites." />
+  <title>WEBSTORE — Explore. Discover. Connect.</title>
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://icons.duckduckgo.com" />
+  <link rel="preconnect" href="https://www.google.com" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+  <script src="./portable-data.js"></script>
+  <script defer src="./portable-app.js"></script>
+</head>
+<body>
+  <div id="app" class="app-shell">
+    <aside id="sidebar" class="sidebar">
+      <div class="brand-row">
+        <a class="brand" href="#/overview" aria-label="WEBSTORE Overview">
+          <img src="./logo.svg" alt="" class="brand-mark" />
+          <span class="brand-name">WEBSTORE<span class="brand-dot">.</span><small>DISCOVER THE WEB</small></span>
+        </a>
+        <button class="icon-button sidebar-close" data-action="close-sidebar" aria-label="Close navigation" title="Close"><span class="ico" data-icon="x"></span></button>
+      </div>
+      <div class="sidebar-scroll">
+        <div class="nav-group">
+          <div class="nav-label">DISCOVER</div>
+          <a class="nav-item" href="#/overview" data-nav="overview"><span class="ico" data-icon="house"></span><span>Overview</span></a>
+          <a class="nav-item" href="#/websites" data-nav="websites"><span class="ico" data-icon="grid"></span><span>All websites</span><span class="nav-count">300</span></a>
+          <a class="nav-item" href="#/featured" data-nav="featured"><span class="ico" data-icon="sparkles"></span><span>Featured</span></a>
+          <a class="nav-item" href="#/trending" data-nav="trending"><span class="ico" data-icon="trending"></span><span>Trending</span></a>
+        </div>
+        <div class="nav-group">
+          <div class="nav-label">CATEGORIES</div>
+          <div id="category-nav"></div>
+        </div>
+        <div class="nav-group">
+          <div class="nav-label">MY LIBRARY</div>
+          <a class="nav-item" href="#/favorites" data-nav="favorites"><span class="ico" data-icon="heart"></span><span>Favorites</span><span class="nav-count" id="count-favorites">0</span></a>
+          <a class="nav-item" href="#/saved" data-nav="saved"><span class="ico" data-icon="bookmark"></span><span>Saved websites</span><span class="nav-count" id="count-saved">0</span></a>
+          <a class="nav-item" href="#/recent" data-nav="recent"><span class="ico" data-icon="clock"></span><span>Recently viewed</span></a>
+          <a class="nav-item" href="#/collections" data-nav="collections"><span class="ico" data-icon="folder"></span><span>Collections</span></a>
+          <a class="nav-item" href="#/compare" data-nav="compare"><span class="ico" data-icon="columns"></span><span>Compare</span><span class="nav-count" id="count-compare">0</span></a>
+        </div>
+        <div class="nav-group">
+          <div class="nav-label">SYSTEM</div>
+          <a class="nav-item" href="#/settings" data-nav="settings"><span class="ico" data-icon="settings"></span><span>Settings</span></a>
+          <a class="nav-item" href="#/about" data-nav="about"><span class="ico" data-icon="info"></span><span>About WEBSTORE</span></a>
+        </div>
+      </div>
+      <div class="sidebar-bottom">
+        <div class="sidebar-mini-card">
+          <div class="mini-icon"><span class="ico" data-icon="compass"></span></div>
+          <div><strong>Your next discovery</strong><span>is one search away.</span></div>
+          <span class="mini-arrow">↗</span>
+        </div>
+        <div class="sidebar-version">WEBSTORE <span>v1.0.0</span></div>
+      </div>
+    </aside>
+
+    <main class="main-shell">
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="icon-button mobile-menu" data-action="open-sidebar" aria-label="Open navigation"><span class="ico" data-icon="menu"></span></button>
+          <div class="breadcrumb"><span>WEBSTORE</span><span class="crumb-slash">/</span><strong id="breadcrumb-current">Overview</strong></div>
+        </div>
+        <div class="topbar-actions">
+          <div class="global-search-wrap">
+            <span class="ico search-icon" data-icon="search"></span>
+            <input id="global-search" class="global-search" type="search" placeholder="Search 300 websites..." autocomplete="off" aria-label="Search websites" />
+            <kbd>⌘ K</kbd>
+            <div id="search-results" class="search-results hidden"></div>
+          </div>
+          <button class="icon-button theme-toggle" data-action="toggle-theme" aria-label="Toggle theme" title="Toggle theme"><span class="ico" data-icon="moon"></span></button>
+          <button class="avatar-button" data-action="open-settings" aria-label="Open settings">W</button>
+        </div>
+      </header>
+      <div id="content-scroll" class="content-scroll">
+        <section id="page-content" class="page-content"></section>
+        <footer class="footer-card">
+          <div class="footer-top"><a class="footer-brand" href="#/overview"><img src="./logo.svg" alt="" /> <strong>WEBSTORE</strong></a><nav class="footer-links"><a href="#/about">About</a><a href="#/privacy">Privacy Policy</a><a href="#/terms">Terms of Use</a><a href="#/disclaimer">Disclaimer</a></nav></div>
+          <div class="footer-bottom"><span>© 2026 WEBSTORE. All rights reserved.</span><span>Third-party names and logos belong to their respective owners.</span></div>
+        </footer>
+      </div>
+    </main>
+  </div>
+  <div id="toast-region" class="toast-region" aria-live="polite"></div>
+  <div id="modal-root"></div>
+</body>
+</html>
